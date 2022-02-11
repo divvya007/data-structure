@@ -1,21 +1,24 @@
 // stack implementation
 
 class Stack {
-  #stackedArray = [];
-  constructor(stackedArray) {
-    this.#stackedArray = [];
+  #stackedArrayStore = [];
+  constructor(stackedArrayStore) {
+    this.#stackedArrayStore = [];
   }
   push(value) {
-    let firstValue;
-    firstValue = this.#stackedArray.push(value);
-    return firstValue;
+    if (value === undefined) {
+      alert("cannot add undefined");
+    } else {
+      this.#stackedArrayStore.push(value);
+      return this.#stackedArrayStore[this.#stackedArrayStore.length - 1];
+    }
   }
   pop() {
-    if (this.#stackedArray.length === 0) {
-      alert("stack is empty add more values");
+    if (this.#stackedArrayStore.length === 0) {
+      alert(null);
     } else {
       let lastValue;
-      lastValue = this.#stackedArray.pop();
+      lastValue = this.#stackedArrayStore.pop();
       return lastValue;
     }
   }
@@ -24,4 +27,3 @@ class Stack {
 let someElementToBeStacked = new Stack();
 
 console.log(someElementToBeStacked);
-console.log(Stack.stackedArray);
