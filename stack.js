@@ -14,7 +14,7 @@ class Stack {
 
     this.#stackedArrayStore.push(value);
     console.log("push", value);
-    console.log("updated stack", this.#stackedArrayStore);
+    console.log("updated stack", this.#stackedArrayStore.toString());
     return this.#stackedArrayStore[this.#stackedArrayStore.length - 1];
   }
 
@@ -25,7 +25,7 @@ class Stack {
 
     let value = this.#stackedArrayStore.pop();
     console.log("pop", value);
-    console.log("updated stack", this.#stackedArrayStore);
+    console.log("updated stack", this.#stackedArrayStore.toString());
     return value;
   }
 }
@@ -40,7 +40,7 @@ myStack.pop();
 myStack.pop();
 
 myStack.push("str");
-myStack.push({ a: "b"});
+myStack.push({ a: "b" });
 
 myStack.pop();
 myStack.pop();
