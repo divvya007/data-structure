@@ -48,5 +48,5 @@ myStack.pop();
 myStack.pop();
 
 // error
-myStack.push();
-myStack.push(null);
+// myStack.push();
+// myStack.push(null);

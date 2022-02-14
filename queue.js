@@ -2,16 +2,17 @@
 
 class Queue {
   #queueArray = [];
+
   queue(value) {
     if (value === undefined) {
-      throw new Error("cannot add undefined");
+      throw new Error("Cannot queue undefined");
     }
     if (value === null) {
-      throw new Error("cannot add undefined");
+      throw new Error("Cannot queue null");
     }
     this.#queueArray.push(value);
     console.log("push", value);
-    console.log("updated queue", this.#queueArrayStore.toString());
+    console.log("updated queue", this.#queueArray.toString());
     return this.#queueArray[this.#queueArray.length - 1];
   }
 
@@ -20,9 +21,9 @@ class Queue {
       return null;
     }
 
-    value = this.#queueArray.shift();
+    let value = this.#queueArray.shift();
     console.log("shift", value);
-    console.log("updated queue", this.#queueArrayStore.toString());
+    console.log("updated queue", this.#queueArray.toString());
     return value;
   }
 }
@@ -38,6 +39,4 @@ myQueue.deQueue();
 myQueue.queue({ name: "John Doe" });
 
 myQueue.deQueue();
-
-myQueue.queue(null);
-myQueue.queue();
+// myQueue.queue(null);
